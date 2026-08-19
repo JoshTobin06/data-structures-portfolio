@@ -1,3 +1,8 @@
+##Blog 1
+
+#What is Data Science
+Data science is turning messy information into useful knowledge and smart decisions. You use tools like programming and statistics to find hidden patterns and stories. It's about asking the right questions, cleaning up the clutter, and turning that information into clear insights that help people make smarter decisions or solve real-world problems in our everyday lives.
+
 Learning data science in social and interdisciplinary contexts matters because technology alone cannot solve complex human problems such as systemic inequality, public health crisis or climate change. By integrating data science with sociology, ethics, and domain-specific knowledge, practitioners develop the necessary skills to contextualize results and identify biases in algorithms. This cross-disciplinary approach allows for the insights derived from data to not only statistically valid, but socially responsible and actionable as well. In the end, closing the gap between quantitative analysis and human experience lets us build technology that truly responds to the various demands of society.
 
 Some responsibilities that come with using data about people are a lot. Some examples include privacy and anonymity, guard against bias, ensure transparency, respect informed consent, maintain data security, and considering the impact. You can use data about almost anybody that you want, it is just that you have to know the right and wrong ways of using it without going into the legal side of things.
