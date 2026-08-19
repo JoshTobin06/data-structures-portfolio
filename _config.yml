@@ -1,6 +1,8 @@
 title: Data Science Portfolio
 description: Documenting my learning in Data Structures
 theme: jekyll-theme-minimal
-Logo: images.png
+
+Logo: profile.png
+
 Author: Joshua Tobin
 show_downloads: false
