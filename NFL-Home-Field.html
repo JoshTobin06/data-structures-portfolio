@@ -16,8 +16,7 @@
         <h1>NFL Home-Field Advantage</h1>
 
         <p class="subtitle">
-            How does home-field advantage vary across NFL seasons
-            throughout the last 10 years?
+            How Does Home-Field Advantage Vary Across NFL Seasons Throughout the Last 10 Years?
         </p>
 
         <p class="date">2016–2025</p>
@@ -26,39 +25,59 @@
 
     <main>
 
+        <!-- Problem Definition -->
         <section>
             <h2>Problem Definition</h2>
 
             <p>
-                Home-field advantage has long been considered an important
-                factor in professional sports. Teams playing at home may
-                benefit from familiar surroundings, supportive fans, and
-                reduced travel demands.
+                Home field advantage has been talked about for decades with some people saying it is
+                actually more useful than others. It has been talked about if you actually play better with home
+                fans than being on the road with fans booing and talking bad to you. By looking at NFL game
+                results from the last 10 years and calculating the home team’s win percentage for each season,
+                we can see whether it has changed over time or not.
             </p>
 
             <p>
-                This project examines how home-field advantage has changed
-                across NFL seasons from 2016 through 2025.
-            </p>
-
-            <p>
-                The main research question is:
+                My research question I will be answering is
             </p>
 
             <blockquote>
-                How does home-field advantage vary across NFL seasons
-                throughout the last 10 years?
+                “How Does Home-Field Advantage Vary Across NFL Seasons Throughout the Last 10 Years?”
             </blockquote>
+
+            <p>
+                This question is relevant because it is an important part of understanding NFL games and team
+                performance. NFL teams, players, coaches, fans, and analysts could all be interested in
+                whether playing at home still provides a significant advantage.
+            </p>
         </section>
 
 
+        <!-- Data Description -->
         <section>
             <h2>Data Description</h2>
 
             <p>
-                The data for this project comes from nflverse's NFL
-                schedule data. The dataset contains information about
-                NFL games across multiple seasons.
+                The key variables I will be going over in this project include: Season, Home Team, Away
+                Team, Home Score, Away Score, Game Result, Location, and Season Type.
+            </p>
+
+            <p>
+                The way I am conceptualizing each one is first by looking at the years I will use for this data
+                (2016-2025 (Season)), the team designated as the home/away team for a particular game
+                (Home Team/Away Team), total number of points scored by the home/away team during a game
+                (Home Score/Away Score), the outcome of the game from the perspective of the home team
+                (Game Result), the physical venue or stadium where the game was played (Location), and the stage of
+                the NFL season in which the game occurred (Season Type).
+            </p>
+
+            <p>
+                The way I will operationalize them is by the name or standardized abbreviation of the team
+                designated as the home/away team (Home Team/Away Team), total number of points scored at the end
+                of the game by the home/away team (Home Score/Away Score), coded according to the outcome of the home
+                team’s perspective (Game Result), recorded as the stadium/venue that the game is played in
+                (Location), and coded according to the stage of the season: Pre Season, Regular Season, Post
+                Season.
             </p>
 
             <h3>Main Variables</h3>
@@ -75,36 +94,78 @@
             </ul>
 
             <p>
-                Each row represents an individual NFL game.
+                The data came from nflverse on GitHub, which is an open-source collection of NFL
+                data and analytics resources. I used the games.csv dataset from the nflverse-data project.
+            </p>
+
+            <p>
+                The nflverse project explains that its data is stored in GitHub releases, and the schedules release
+                contains NFL game/schedule data. Each row represents one NFL game. The dataset contains
+                games from every game from the years I filtered it by (2016-2025). I will group those games by
+                season to determine how often the home teams win.
+            </p>
+
+            <h3>Links</h3>
+
+            <ul>
+                <li>
+                    <a href="https://github.com/nflverse/nflverse-data" target="_blank">
+                        https://github.com/nflverse/nflverse-data
+                    </a>
+                </li>
+
+                <li>
+                    <a href="https://github.com/nflverse/nflverse-data/releases" target="_blank">
+                        https://github.com/nflverse/nflverse-data/releases
+                    </a>
+                </li>
+
+                <li>
+                    <a href="https://github.com/nflverse/nfldata/blob/master/data/games.csv" target="_blank">
+                        https://github.com/nflverse/nfldata/blob/master/data/games.csv
+                    </a>
+                </li>
+            </ul>
+        </section>
+
+
+        <!-- Data Cleaning -->
+        <section>
+            <h2>Data Cleaning and Preparation</h2>
+
+            <p>
+                For my data cleaning and preparation process, I first decided on what variables I was
+                going to measure home field advantage on. I decided to do the 9 important variables which
+                include: Season, Home Team, Away Team, Home Score, Away Score, Game Result, Location,
+                and Season Type.
+            </p>
+
+            <p>
+                I then focused on preparing my data for my project. I first printed a list of all
+                of the original columns which was a total number of 46 columns.
+            </p>
+
+            <p>
+                The next thing I did was to tell
+                the DataFrame to replace all of those columns with just the 8 variables that I am researching in
+                this project.
+            </p>
+
+            <p>
+                After I was done cleaning all of the data that I was and wasn’t going to use, I then
+                went to set a name for all of the variables that I would be using in this research.
+            </p>
+
+            <p>
+                The last preparation I had to do was to write a code to calculate the home field win percentage,
+                and then filter it by season.
             </p>
         </section>
 
 
+        <!-- Data Understanding -->
         <section>
-            <h2>Data Cleaning & Preparation</h2>
-
-            <p>
-                The dataset was cleaned and organized using Python and
-                pandas. The analysis was restricted to the 2016–2025
-                NFL seasons.
-            </p>
-
-            <p>
-                Games were grouped by season and the percentage of games
-                won by the home team was calculated for each season.
-            </p>
-
-            <pre><code>
-home_win_percentage = (
-    df.groupby("season")["home_team_win"]
-    .mean() * 100
-)
-            </code></pre>
-        </section>
-
-
-        <section>
-            <h2>Data Analysis & Visualization</h2>
+            <h2>Data Understanding and Visualizations</h2>
 
             <h3>Home Team Win Percentage by Season</h3>
 
@@ -113,66 +174,100 @@ home_win_percentage = (
                 alt="NFL home team win percentage by season"
                 class="chart"
             >
-
-            <p>
-                The line chart shows how the percentage of NFL games won
-                by the home team changed from 2016 through 2025.
-            </p>
         </section>
 
 
+        <!-- Storytelling -->
         <section>
-            <h2>Findings</h2>
+            <h2>Storytelling and Narrative</h2>
 
             <p>
-                The results show that home teams won more than half of
-                NFL games in most seasons during the period studied.
+                The visual analysis of the data portrays that there isn’t a current trend with NFL teams
+                playing at their home fields, but the average win percentage of home teams are above 50%
+                besides 2020 where it was around 49.6%.
             </p>
 
             <p>
-                However, the size of the home-field advantage varied
-                from season to season. This suggests that home-field
-                advantage is not a constant value and may change over time.
+                It would be inaccurate to assume that there is no
+                advantage to playing as the home team, as the results show win percentages above 50%.
+            </p>
+
+            <p>
+                Home field advantage is a big topic in the NFL talks that also have many factors going into the
+                results such as their record going into the game, the attendance depending on weather, etc.
             </p>
         </section>
 
 
+        <!-- Limitations -->
         <section>
-            <h2>Limitations</h2>
-
-            <ul>
-                <li>The analysis only covers ten NFL seasons.</li>
-                <li>Home-field advantage can be affected by many factors.</li>
-                <li>The analysis does not account for individual team strength.</li>
-                <li>COVID-19 affected attendance during some NFL games.</li>
-            </ul>
-        </section>
-
-
-        <section>
-            <h2>Conclusion</h2>
+            <h2>Limitations, Ethics, and Reflection</h2>
 
             <p>
-                Home-field advantage has remained an important part of
-                NFL games, but its effectiveness has varied across seasons.
-                Examining home-team win percentage provides a simple way
-                to measure how this advantage has changed over time.
+                The dataset does fail to include the record of the home/away teams going into each
+                week, which I think would bring better results into multiple researches like the attendance
+                percentage of NFL games, the win percentage of being at home, etc.
+            </p>
+
+            <p>
+                Some biases that exist in
+                the dataset could include when in the season the games happened like the post season, which
+                has a completely different feel and atmosphere than playing a regular season game, which is
+                why I filtered the games to be regular season so that it makes a more neutral feel.
+            </p>
+
+            <p>
+                Also, the NFL
+                has changed over the last 10 years with changes in rules, scheduling, traveling, and stadiums,
+                meaning differences in seasons aren’t just based on one factor.
+            </p>
+
+            <p>
+                If I had more time or data to
+                explore around this subject, I would want to factor in a couple more things such as what the
+                weather forecast was that day of the game, the record of the home team going into the game
+                because that plays a major factor in the attendance of those games.
             </p>
         </section>
 
 
+        <!-- Code Repository -->
+        <section>
+            <h2>Code Repository</h2>
+
+            <p>
+                <a href="https://github.com/JoshTobin06/Project-1" target="_blank">
+                    GitHub Code Repository
+                </a>
+            </p>
+        </section>
+
+
+        <!-- References -->
         <section>
             <h2>References</h2>
 
             <ul>
                 <li>
-                    <a href="https://github.com/nflverse/nflverse-data">
+                    <a href="https://github.com/nflverse/nflverse-data" target="_blank">
                         nflverse Data
                     </a>
                 </li>
 
                 <li>
-                    <a href="https://github.com/JoshTobin06/Project-1">
+                    <a href="https://github.com/nflverse/nflverse-data/releases" target="_blank">
+                        nflverse Releases
+                    </a>
+                </li>
+
+                <li>
+                    <a href="https://github.com/nflverse/nfldata/blob/master/data/games.csv" target="_blank">
+                        NFL games.csv Dataset
+                    </a>
+                </li>
+
+                <li>
+                    <a href="https://github.com/JoshTobin06/Project-1" target="_blank">
                         GitHub Code Repository
                     </a>
                 </li>
