@@ -1,160 +1,187 @@
----
-layout: page
-title: NFL Home-Field Advantage
----
+<!DOCTYPE html>
+<html lang="en">
 
-# NFL Home-Field Advantage
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-## How Does Home-Field Advantage Vary Across NFL Seasons Throughout the Last 10 Years?
+    <title>NFL Home-Field Advantage</title>
 
-Home-field advantage has been discussed in sports for decades. Playing in
-front of a home crowd may give teams an advantage compared with playing on
-the road.
+    <link rel="stylesheet" href="style.css">
+</head>
 
-For this project, I analyzed NFL game results from **2016–2025** to determine
-whether home-field advantage has changed over time.
+<body>
 
----
+    <header>
+        <h1>NFL Home-Field Advantage</h1>
 
-## Research Question
+        <p class="subtitle">
+            How does home-field advantage vary across NFL seasons
+            throughout the last 10 years?
+        </p>
 
-**How does home-field advantage vary across NFL seasons throughout the last
-10 years?**
-
-To answer this question, I calculated the percentage of games won by the
-home team during each NFL season.
-
----
-
-## Data
-
-The data for this project comes from **nflverse**, an open-source collection
-of NFL data.
-
-[View the nflverse dataset on GitHub](https://github.com/nflverse/nflverse-data)
-
-Each row in the dataset represents one NFL game.
-
-The main variables used in my analysis were:
-
-- Season
-- Home Team
-- Away Team
-- Home Score
-- Away Score
-- Game Result
-- Location
-- Season Type
-
----
-
-## Data Cleaning
-
-The original dataset contained **46 columns**. Because many of those
-variables were not necessary for answering my research question, I reduced
-the dataset to the variables relevant to home-field advantage.
-
-I also filtered the dataset to include:
-
-- Seasons from **2016–2025**
-- **Regular-season games**
-- Games with valid home and away scores
-
-After cleaning the data, I calculated whether the home team won each game
-and grouped the results by season.
-
----
-
-## Home Win Percentage by Season
-
-The main measurement used for home-field advantage was:
-
-**Home Win Percentage = Home Wins / Total Games**
-
-I calculated this percentage separately for every NFL season from
-2016 through 2025.
+        <p class="date">2016–2025</p>
+    </header>
 
 
----
+    <main>
 
-## Results
+        <section>
+            <h2>Problem Definition</h2>
 
-The results suggest that home-field advantage still exists in the NFL, but
-it does not follow a consistent upward or downward trend across the
-10-year period.
+            <p>
+                Home field advantage has been talked about for decades with some people saying it is actually more useful than others. It has been talked about if you actually play better with home fans than being on the road with fans booing and talking bad to you. By looking at NFL game results from the last 10 years and calculating the home team's win percentage for each season, we can see weather it has chnaged over time or not. My research question I will be answering is "How Does Home-Field Advantage Vary Across NFL Seasons Throughout the Last 10 Years?" This question is relevant because it is an important part of understanding NFL games and team performance. NFL teams, players, coaches, fans, and analysts could all be interested in whether playing at homr still provides a significant advantage.
+            </p>
 
-In most seasons, home teams won more than **50% of games**.
+            <p>
+                This project examines how home-field advantage has changed
+                across NFL seasons from 2016 through 2025.
+            </p>
 
-One notable exception was the **2020 NFL season**, when the home-team win
-percentage was approximately **49.6%**.
+            <p>
+                The main research question is:
+            </p>
 
-This season was unusual because many NFL games were played with limited or
-no attendance, which makes 2020 particularly interesting when studying
-home-field advantage.
+            <blockquote>
+                How does home-field advantage vary across NFL seasons
+                throughout the last 10 years?
+            </blockquote>
+        </section>
 
----
 
-## What Does This Tell Us?
+        <section>
+            <h2>Data Description</h2>
 
-The visualization suggests that playing at home generally provides an
-advantage, but the strength of that advantage changes from season to season.
+            <p>
+                The data for this project comes from nflverse's NFL
+                schedule data. The dataset contains information about
+                NFL games across multiple seasons.
+            </p>
 
-Home-field advantage cannot necessarily be explained by one factor.
-Possible influences include:
+            <h3>Main Variables</h3>
 
-- Crowd attendance
-- Travel
-- Team strength
-- Weather
-- Stadium differences
-- Scheduling
-- Changes to NFL rules
+            <ul>
+                <li>Season</li>
+                <li>Home Team</li>
+                <li>Away Team</li>
+                <li>Home Score</li>
+                <li>Away Score</li>
+                <li>Game Result</li>
+                <li>Location</li>
+                <li>Season Type</li>
+            </ul>
 
-Because of these factors, home-field advantage should not be interpreted as
-the only reason home teams win more frequently.
+            <p>
+                Each row represents an individual NFL game.
+            </p>
+        </section>
 
----
 
-## Limitations
+        <section>
+            <h2>Data Cleaning & Preparation</h2>
 
-There are several limitations to this analysis.
+            <p>
+                The dataset was cleaned and organized using Python and
+                pandas. The analysis was restricted to the 2016–2025
+                NFL seasons.
+            </p>
 
-The dataset does not account for how strong each team was entering a game.
-For example, a strong home team playing a weak road team could win because
-of team quality rather than home-field advantage.
+            <p>
+                Games were grouped by season and the percentage of games
+                won by the home team was calculated for each season.
+            </p>
 
-Other factors that could be investigated include:
+            <pre><code>
+home_win_percentage = (
+    df.groupby("season")["home_team_win"]
+    .mean() * 100
+)
+            </code></pre>
+        </section>
 
-- Team records entering each game
-- Stadium attendance
-- Weather conditions
-- Travel distance
-- Point spreads
-- Stadium type
 
-Future analysis incorporating these variables could provide a better
-understanding of why home-field advantage exists.
+        <section>
+            <h2>Data Analysis & Visualization</h2>
 
----
+            <h3>Home Team Win Percentage by Season</h3>
 
-## Conclusion
+            <img
+                src="images/home_win_percentage.png"
+                alt="NFL home team win percentage by season"
+                class="chart"
+            >
 
-Based on NFL games from 2016–2025, home teams generally won more than 50%
-of games, suggesting that home-field advantage continues to exist.
+            <p>
+                The line chart shows how the percentage of NFL games won
+                by the home team changed from 2016 through 2025.
+            </p>
+        </section>
 
-However, the amount of advantage varies by season and does not show one
-consistent trend across the entire 10-year period.
 
-The results demonstrate that home-field advantage is real, but it is likely
-influenced by several factors beyond simply whether a team is playing at
-home.
+        <section>
+            <h2>Findings</h2>
 
----
+            <p>
+                The results show that home teams won more than half of
+                NFL games in most seasons during the period studied.
+            </p>
 
-## Project Files
+            <p>
+                However, the size of the home-field advantage varied
+                from season to season. This suggests that home-field
+                advantage is not a constant value and may change over time.
+            </p>
+        </section>
 
-[View My Jupyter Notebook](PUT-YOUR-NOTEBOOK-LINK-HERE)
 
-[View My GitHub Repository](PUT-YOUR-REPOSITORY-LINK-HERE)
+        <section>
+            <h2>Limitations</h2>
 
-[View the nflverse Data](https://github.com/nflverse/nflverse-data)
+            <ul>
+                <li>The analysis only covers ten NFL seasons.</li>
+                <li>Home-field advantage can be affected by many factors.</li>
+                <li>The analysis does not account for individual team strength.</li>
+                <li>COVID-19 affected attendance during some NFL games.</li>
+            </ul>
+        </section>
+
+
+        <section>
+            <h2>Conclusion</h2>
+
+            <p>
+                Home-field advantage has remained an important part of
+                NFL games, but its effectiveness has varied across seasons.
+                Examining home-team win percentage provides a simple way
+                to measure how this advantage has changed over time.
+            </p>
+        </section>
+
+
+        <section>
+            <h2>References</h2>
+
+            <ul>
+                <li>
+                    <a href="https://github.com/nflverse/nflverse-data">
+                        nflverse Data
+                    </a>
+                </li>
+
+                <li>
+                    <a href="https://github.com/JoshTobin06/Project-1">
+                        GitHub Code Repository
+                    </a>
+                </li>
+            </ul>
+        </section>
+
+    </main>
+
+
+    <footer>
+        <p>NFL Home-Field Advantage | Data Science Project</p>
+    </footer>
+
+</body>
+</html>
