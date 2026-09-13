@@ -7,4 +7,4 @@ This section documents my data science projects, research questions, and data st
 I analyzed NFL games from 2016–2025 to determine how home-field advantage
 has changed over time.
 
-[View the NFL Home-Field Advantage Project](Project_1)
+[View the NFL Home-Field Advantage Project](NFL-Home-Field.html)
