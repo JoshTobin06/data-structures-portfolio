@@ -1,1 +1,160 @@
+---
+layout: page
+title: NFL Home-Field Advantage
+---
 
+# NFL Home-Field Advantage
+
+## How Does Home-Field Advantage Vary Across NFL Seasons Throughout the Last 10 Years?
+
+Home-field advantage has been discussed in sports for decades. Playing in
+front of a home crowd may give teams an advantage compared with playing on
+the road.
+
+For this project, I analyzed NFL game results from **2016–2025** to determine
+whether home-field advantage has changed over time.
+
+---
+
+## Research Question
+
+**How does home-field advantage vary across NFL seasons throughout the last
+10 years?**
+
+To answer this question, I calculated the percentage of games won by the
+home team during each NFL season.
+
+---
+
+## Data
+
+The data for this project comes from **nflverse**, an open-source collection
+of NFL data.
+
+[View the nflverse dataset on GitHub](https://github.com/nflverse/nflverse-data)
+
+Each row in the dataset represents one NFL game.
+
+The main variables used in my analysis were:
+
+- Season
+- Home Team
+- Away Team
+- Home Score
+- Away Score
+- Game Result
+- Location
+- Season Type
+
+---
+
+## Data Cleaning
+
+The original dataset contained **46 columns**. Because many of those
+variables were not necessary for answering my research question, I reduced
+the dataset to the variables relevant to home-field advantage.
+
+I also filtered the dataset to include:
+
+- Seasons from **2016–2025**
+- **Regular-season games**
+- Games with valid home and away scores
+
+After cleaning the data, I calculated whether the home team won each game
+and grouped the results by season.
+
+---
+
+## Home Win Percentage by Season
+
+The main measurement used for home-field advantage was:
+
+**Home Win Percentage = Home Wins / Total Games**
+
+I calculated this percentage separately for every NFL season from
+2016 through 2025.
+
+
+---
+
+## Results
+
+The results suggest that home-field advantage still exists in the NFL, but
+it does not follow a consistent upward or downward trend across the
+10-year period.
+
+In most seasons, home teams won more than **50% of games**.
+
+One notable exception was the **2020 NFL season**, when the home-team win
+percentage was approximately **49.6%**.
+
+This season was unusual because many NFL games were played with limited or
+no attendance, which makes 2020 particularly interesting when studying
+home-field advantage.
+
+---
+
+## What Does This Tell Us?
+
+The visualization suggests that playing at home generally provides an
+advantage, but the strength of that advantage changes from season to season.
+
+Home-field advantage cannot necessarily be explained by one factor.
+Possible influences include:
+
+- Crowd attendance
+- Travel
+- Team strength
+- Weather
+- Stadium differences
+- Scheduling
+- Changes to NFL rules
+
+Because of these factors, home-field advantage should not be interpreted as
+the only reason home teams win more frequently.
+
+---
+
+## Limitations
+
+There are several limitations to this analysis.
+
+The dataset does not account for how strong each team was entering a game.
+For example, a strong home team playing a weak road team could win because
+of team quality rather than home-field advantage.
+
+Other factors that could be investigated include:
+
+- Team records entering each game
+- Stadium attendance
+- Weather conditions
+- Travel distance
+- Point spreads
+- Stadium type
+
+Future analysis incorporating these variables could provide a better
+understanding of why home-field advantage exists.
+
+---
+
+## Conclusion
+
+Based on NFL games from 2016–2025, home teams generally won more than 50%
+of games, suggesting that home-field advantage continues to exist.
+
+However, the amount of advantage varies by season and does not show one
+consistent trend across the entire 10-year period.
+
+The results demonstrate that home-field advantage is real, but it is likely
+influenced by several factors beyond simply whether a team is playing at
+home.
+
+---
+
+## Project Files
+
+[View My Jupyter Notebook](PUT-YOUR-NOTEBOOK-LINK-HERE)
+
+[View My GitHub Repository](PUT-YOUR-REPOSITORY-LINK-HERE)
+
+[View the nflverse Data](https://github.com/nflverse/nflverse-data)
