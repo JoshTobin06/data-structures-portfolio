@@ -19,7 +19,7 @@ My name is Joshua Tobin and I am majoring in Sports Analytics and plan on double
 
 View my data science and sports analytics projects.
 
-[View Projects](projects.html)
+[View Projects](projects.md)
 
 ### 📝 Blog
 
