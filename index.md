@@ -8,6 +8,13 @@
     UNC Charlotte
 </p>
 
+<img
+    src="profile.png"
+    alt="Joshua Tobin"
+    width="150"
+    style="border-radius: 50%; margin-bottom: 20px;"
+>
+
 ---
 
 ## About Me
