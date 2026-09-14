@@ -25,7 +25,7 @@ View my data science and sports analytics projects.
 
 View my blog posts and other work.
 
-[View Blog](blog.html)
+[View Blog](blog.md)
 
 ### 💼 LinkedIn
 
