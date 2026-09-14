@@ -1,0 +1,16 @@
+---
+---
+
+@import "{{ site.theme }}";
+
+body {
+    background-color: #eaf6ff;
+}
+
+.wrapper {
+    background-color: white;
+    padding: 30px;
+    border-radius: 12px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
