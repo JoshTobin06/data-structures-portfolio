@@ -53,4 +53,22 @@ This project analyzes NFL game data from 2016–2025 to examine how home-field a
 
 ---
 
+---
+
+## Contact Me
+
+You can reach me using the contact information below.
+
+**Email:** [joshrtobin@icloud.com](mailto:joshrtobin@icloud.com)
+
+**Phone:** (919) 798-7445
+
+**LinkedIn:** [Joshua Tobin](https://www.linkedin.com/in/joshua-tobin-3673b526b)
+
+**GitHub:** [JoshTobin06](https://github.com/JoshTobin06)
+
+---
+
+*Joshua Tobin | Data Science & Sports Analytics Portfolio*
+
 *Data Science & Sports Analytics Portfolio*
