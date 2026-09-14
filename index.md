@@ -7,4 +7,4 @@ My name is Joshua Tobin and I am majoring in Sports Analytics and plan on double
 - [Blog](blog.md)
 - [Projects](projects.md)
 - [LinkedIn](https://www.linkedin.com/in/joshua-tobin-3673b526b)
-- [Resume](resume)
+- [Resume](Joshua_Tobin_Resume.pdf)
