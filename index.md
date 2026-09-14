@@ -37,7 +37,7 @@ Connect with me and view my professional experience.
 
 View my resume.
 
-[View Resume](Joshua_Tobin_Resume.pdf)
+[View Resume](Joshua_Tobin_Resume (1).pdf)
 
 ---
 
