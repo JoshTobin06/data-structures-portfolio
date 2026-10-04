@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Predicting NFL Outcomes with Statistics</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header>
+        <h1>Predicting NFL Outcomes with Statistics</h1>
+
+        <p class="subtitle">
+            Which team performance statistics are most useful for predicting NFL games outcomes, and how do Logistic Regression and Random Forest models compare in their predictive perforrmance?
+        </p>
+
+        <p class="date">2016–2025</p>
+    </header>
+
+
+    <main>
+
+        <!-- Problem Definition -->
+        <section>
+            <h2>Problem and Dataset</h2>
+
+            <p>
+                Which team performance statistics are most useful for predicting NFL games outcomes, and how do Logistic Regression and Random Forest models compare in their predictive performance?
+                  Target Variable: Win
+                The task is Classification because my target variable, win, has two categories. In a deeper definition, it’s binary classification because there are only two possible outcomes.
+            </p>
+
+            <p>
+                My research question I will be answering is
+            </p>
+
+            <blockquote>
+                “Which team performance statistics are most useful for predicting NFL games outcomes, and how do Logistic Regression and Random Forest models compare in their predictive performance?”
+            </blockquote>
+
+        </section>
+
+
+        <!-- Data Description -->
+        <section>
+            <h2>Context and Supporting Research</h2>
+
+            <p>
+                The key variables I will be going over in this project include: Win/Loss, Points Scored, Points Allowed,
+                Total Yards, Passing Yards, Rushing Yards, Turnovers, Turnover Differential, Win Percentage, and Home/Away.
+            </p>
+
+            <p>
+                The way I am conceptualizing each one is first by seeing whether the team won or lost the game (Win/Loss), 
+                Average points scored before the game (Points Scored), Average points allowed before the game (Points Allowed), 
+                Average offensive yards gained (Total Yards), Average passing yards gained (Passing Yards), Average rushing yards gained (Rushing Yards),
+                Average turnovers committed (Turnovers), Turnovers gained minus turnovers lost (Turnover Differential), Team's win percentage before the game (Win Percentage),
+                Whether the team is playing at home or away (Home/Away).
+            </p>
+
+            <p>
+                The way I will operationalize them is by Measured as 1 if the team wins and 0 if the team loses (Win/Loss), The team's average points allowed per game
+                before the current game (Points Scored), The team's average points allowed per game before the current game (Points ALlowed), The team's average
+                total offensive yards per game before the currwent game (Total Yards), The team's average total passing yards per game before the current game (Passing Yards),
+                The team's average total rushing yards per game before the current game (Rushing Yards), The team's average number of turnovers committed per game
+                before the current game (Turnovers), The team's turnovers gained minus turnovers committed before the current game (Turnover Differential), The team's 
+                number of wins divided by games played before the current game (Win Percentage), Measured as 1 if the team is playing at home and 0 if away (Home/Away).
+            </p>
+
+            <h3>Main Variables</h3>
+
+            <ul>
+                <li>Win/Loss</li>
+                <li>Points Scored</li>
+                <li>Points Allowed</li>
+                <li>Total Yards</li>
+                <li>Passing Yards</li>
+                <li>Rushing Yards</li>
+                <li>Turnovers</li>
+                <li>Turnover Differential</li>
+                <li>Win Percentage</li> 
+                <li>Home/Away</li>
+            </ul>
+
+            <p>
+                The data came from nflverse on GitHub, which is an open-source collection of NFL
+                data and analytics resources. I used the games.csv dataset from the nflverse-data project.
+            </p>
+
+            <p>
+                The nflverse project explains that its data is stored in GitHub releases, and the schedules release
+                contains NFL game/schedule data. Each row represents one NFL game. The dataset contains
+                games from every game from the years I filtered it by (2016-2025).
+            </p>
+
+            <h3>Links</h3>
+
+            <ul>
+                <li>
+                    <a href="https://github.com/nflverse/nflverse-data" target="_blank">
+                        https://github.com/nflverse/nflverse-data
+                    </a>
+                </li>
+
+                <li>
+                    <a href="https://github.com/nflverse/nflverse-data/releases" target="_blank">
+                        https://github.com/nflverse/nflverse-data/releases
+                    </a>
+                </li>
+
+                <li>
+                    <a href="https://github.com/nflverse/nfldata/blob/master/data/games.csv" target="_blank">
+                        https://github.com/nflverse/nfldata/blob/master/data/games.csv
+                    </a>
+                </li>
+            </ul>
+        </section>
+
+
+        <!-- Data Cleaning -->
+        <section>
+            <h2>Data Cleaning and Preparation</h2>
+
+            <p>
+               The data was prepared before creating the machine-learning models. NFL game data and weekly team statistics from 2015-2025 were combined into one dataset.
+               Each game was separated into a home-team observation and an away-team observation.
+               A binary target variable called win was created where 1 represents a win and 0 represents a loss. Home-field status was also coded as 1 and 0 for away.
+               To prevent the model from using information from the game it was trying to predict, team statistics were shifted by one game. Pregame averages were then calculated using only games that had already been played.
+               This included average points scored, points allowed, passing yards, rushing yards, total yards, turnovers, and win percentage.
+               Missing values were removed because teams did not have previous-game statistics at the beginning of each season.
+            </p>
+        </section>
+
+
+        <!-- Data Understanding -->
+        <section>
+            <h2>Data Understanding and Feature Selection</h2>
+
+            <h3>Home Team Win Percentage by Season</h3>
+
+            <img
+                src="home_win_percentage.png"
+                alt="NFL home team win percentage by season"
+                class="chart"
+            >
+
+            <p>  
+                The first chart shows the combined NFL home-field win percentage through the last 10 seasons, with the red line being the mid (50%), with one 1 season being below 50%.
+            </p>
+            
+             <img
+                src="home_win_percentage1.png"
+                alt="Second NFL home field advantage visualization"
+                class="chart"
+            >
+
+            <p>
+                The second chart shows the point differential across the last 10 seasons with the red dashed line being the mid (0 point differential) with the circles being outliers in either direction.
+            </p>
+                
+        </section>
+
+
+        <!-- Storytelling -->
+        <section>
+            <h2>Storytelling and Narrative</h2>
+
+            <p>
+                The visual analysis of the data portrays that there isn’t a current trend with NFL teams
+                playing at their home fields, but the average win percentage of home teams are above 50%
+                besides 2020 where it was around 49.6%.
+            </p>
+
+            <p>
+                It would be inaccurate to assume that there is no
+                advantage to playing as the home team, as the results show win percentages above 50%.
+            </p>
+
+            <p>
+                Home field advantage is a big topic in the NFL talks that also have many factors going into the
+                results such as their record going into the game, the attendance depending on weather, etc.
+            </p>
+        </section>
+
+
+        <!-- Limitations -->
+        <section>
+            <h2>Limitations, Ethics, and Reflection</h2>
+
+            <p>
+                The dataset does fail to include the record of the home/away teams going into each
+                week, which I think would bring better results into multiple researches like the attendance
+                percentage of NFL games, the win percentage of being at home, etc.
+            </p>
+
+            <p>
+                Some biases that exist in
+                the dataset could include when in the season the games happened like the post season, which
+                has a completely different feel and atmosphere than playing a regular season game, which is
+                why I filtered the games to be regular season so that it makes a more neutral feel.
+            </p>
+
+            <p>
+                Also, the NFL
+                has changed over the last 10 years with changes in rules, scheduling, traveling, and stadiums,
+                meaning differences in seasons aren’t just based on one factor.
+            </p>
+
+            <p>
+                If I had more time or data to
+                explore around this subject, I would want to factor in a couple more things such as what the
+                weather forecast was that day of the game, the record of the home team going into the game
+                because that plays a major factor in the attendance of those games.
+            </p>
+        </section>
+
+
+        <!-- Code Repository -->
+        <section>
+            <h2>Code Repository</h2>
+
+            <p>
+                <a href="https://github.com/JoshTobin06/Project-1" target="_blank">
+                    GitHub Code Repository
+                </a>
+            </p>
+        </section>
+
+
+        <!-- References -->
+        <section>
+            <h2>References</h2>
+
+            <ul>
+                <li>
+                    <a href="https://github.com/nflverse/nflverse-data" target="_blank">
+                        nflverse Data
+                    </a>
+                </li>
+
+                <li>
+                    <a href="https://github.com/nflverse/nflverse-data/releases" target="_blank">
+                        nflverse Releases
+                    </a>
+                </li>
+
+                <li>
+                    <a href="https://github.com/nflverse/nfldata/blob/master/data/games.csv" target="_blank">
+                        NFL games.csv Dataset
+                    </a>
+                </li>
+
+                <li>
+                    <a href="https://github.com/JoshTobin06/Project-1" target="_blank">
+                        GitHub Code Repository
+                    </a>
+                </li>
+            </ul>
+        </section>
+
+<!-- APA Article Citations -->
+<section>
+    <h2>APA Article Citations</h2>
+
+    <!-- Article 1 -->
+    <p>
+        nfelo. (n.d.). <em>NFL home field advantage (HFA) tracker</em>.
+        <a href="https://www.nfeloapp.com/tools/nfl-home-field-advantage-hfa-tracker/" target="_blank">
+            https://www.nfeloapp.com/tools/nfl-home-field-advantage-hfa-tracker/
+        </a>
+    </p>
+
+    <!-- Article 2 -->
+    <p>
+        Zakarian, C. B. (2026). <em>Home-field advantage in the NFL</em>.
+        NFL Analytics.
+        <a href="https://nflanalytic.com/explainer-home-field-advantage.html" target="_blank">
+            NFL Analytics – Home-Field Advantage
+        </a>
+    </p>
+
+    <!-- Article 3 -->
+    <p>
+        Locker, B. (2025, July 14).
+        <em>NFL home teams are winning less: The PFF data behind the trend</em>.
+        PFF.
+        <a href="https://www.pff.com/news/nfl-home-field-advantage-pff-data" target="_blank">
+            https://www.pff.com/news/nfl-home-field-advantage-pff-data
+        </a>
+    </p>
+
+</section>
+
+        <!-- AI Use Statement -->
+        <h3>AI Use Statement</h3>
+
+        <p>
+            OpenAI ChatGPT (GPT-5.6 Sol) was used to help explain Python concepts,
+            troubleshoot code, organize the notebook, improve written descriptions,
+            and assist with interpreting the results. AI-generated suggestions were
+            reviewed before being included in the final project.
+        </p>
+
+    </main>
+
+
+    <footer>
+        <p>NFL Outcomes with Statistics | Data Science Project</p>
+    </footer>
+
+</body>
+</html>
