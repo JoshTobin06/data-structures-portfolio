@@ -13,3 +13,5 @@ has changed over time.
 ### Project 2: Predicting NFL Games Outcomes with Statistics
 
 I used NFL teams statistics for predicting NFL games outcomes.
+
+[View the NFL Game Prediction Project](Predicting_Outcomes.html)
