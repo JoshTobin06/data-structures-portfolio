@@ -204,29 +204,27 @@
             <h2>Limitations, Ethics, and Reflection</h2>
 
             <p>
-                The dataset does fail to include the record of the home/away teams going into each
-                week, which I think would bring better results into multiple researches like the attendance
-                percentage of NFL games, the win percentage of being at home, etc.
+                One limitation of this project is that NFL games can be difficult to predict because many factors that affect the outcome are not included in the model.
+                For example, injuries, weather, coaching decisions, strength of opponent, and changes in starting players are not directly considered. 
+                The model is mainly based on a team’s previous performance statistics, so it may struggle when a team’s current situation is different from its past performance.
             </p>
 
             <p>
-                Some biases that exist in
-                the dataset could include when in the season the games happened like the post season, which
-                has a completely different feel and atmosphere than playing a regular season game, which is
-                why I filtered the games to be regular season so that it makes a more neutral feel.
+                There could also be bias in the data because teams and the NFL have changed over the seasons included in the dataset.
+                Rules, playing styles, coaching strategies, and team strength can change over time, meaning older seasons may not represent current NFL games as well as newer seasons.
+                Incorrect predictions could also have consequences depending on how the model is used. For example, a team or analyst relying too heavily on the model could make poor decisions based on an incorrect prediction. 
+                The consequences could be even greater if someone tried to use the predictions for sports betting because the model is not accurate enough to guarantee outcomes.
             </p>
 
             <p>
-                Also, the NFL
-                has changed over the last 10 years with changes in rules, scheduling, traveling, and stadiums,
-                meaning differences in seasons aren’t just based on one factor.
+                In real-world use, this model should be treated as an additional source of information rather than a guaranteed prediction.
+                The Logistic Regression model was only about 58.5% accurate, while the Random Forest was about 55.9% accurate, showing that there is still a large amount of uncertainty when predicting NFL game outcomes.
             </p>
 
             <p>
                 If I had more time or data to
-                explore around this subject, I would want to factor in a couple more things such as what the
-                weather forecast was that day of the game, the record of the home team going into the game
-                because that plays a major factor in the attendance of those games.
+                explore around this subject, I would have not included total yards and would have only done passing
+                and rushing yards, as it has a smaller chance of causing misleading information
             </p>
         </section>
 
